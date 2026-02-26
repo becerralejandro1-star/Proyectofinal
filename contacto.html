@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="proyecto.css">
+</head>
+<body>
+
+<!-- MENU -->
+<nav>
+  <ul>
+    <li><a href="Proyecto.html">Inicio</a></li>
+    <li><a href="servicios.html">Servicios</a></li>
+    <li><a href="portafolio.html">Portafolio</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul>
+</nav>
+
+
+<!-- SECCION CONTACTO -->
+<div class="seccion-contacto">
+
+    <h2>Contacto</h2>
+
+<form class="formulario" action="guardar.php" method="POST">
+
+    <input type="text" name="nombre" placeholder="Tu nombre" required>
+
+    <input type="email" name="correo" placeholder="Tu correo" required>
+
+    <textarea name="mensaje" placeholder="Escribe tu mensaje..." rows="5" required></textarea>
+
+    <button type="submit">Enviar mensaje</button>
+
+</form>
+</div>
+
+
+<!-- INFORMACION PERSONAL -->
+<h3>Información de contacto</h3>
+
+<p>Correo electrónico</p>
+<p>becerralejandro1@famil.com</p>
+
+<p>Teléfono</p>
+<p>8718364357</p>
+
+
+<div id="listaContactos"></div>
+
+<script src="contactos.js"></script>
+
+</body>
+</html>

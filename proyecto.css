@@ -1,0 +1,429 @@
+/* =========================
+   VARIABLES PROFESIONALES
+========================= */
+:root {
+    --color-gold: #FFD700;
+    --color-gold-soft: rgba(255,215,0,0.3);
+    --color-gold-glow: rgba(255,215,0,0.6);
+    --color-bg: #252525;
+    --color-card: rgba(0,0,0,0.75);
+    --color-card-light: rgba(0,0,0,0.6);
+    --color-text: #ffffff;
+}
+
+/* =========================
+   FUENTE PERSONALIZADA
+========================= */
+@font-face {
+    font-family: 'ArchazNegras_PERSONAL_USE_ONLY';
+    src: url('./fonts/ArchazNegras_PERSONAL_USE_ONLY.otf') format('opentype');
+    font-display: swap;
+}
+
+/* =========================
+   RESET PROFESIONAL
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.25s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* =========================
+   BODY + FONDO PREMIUM
+========================= */
+body {
+    font-family: Arial, sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url("im-g/fondo.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* efecto profundidad */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 40%, black 100%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* =========================
+   CONTENEDOR GENERAL
+========================= */
+section,
+.container,
+.contenedor {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* =========================
+   LOGO
+========================= */
+.logo {
+    max-width: 800px;
+    width: 100%;
+    display: block;
+    margin: 30px auto 10px;
+}
+
+/* =========================
+   TITULO PRINCIPAL (SIN MODIFICAR TIPOGRAFIA)
+========================= */
+h1 {
+    font-family: 'ArchazNegras_PERSONAL_USE_ONLY', sans-serif;
+    font-size: clamp(28px, 6vw, 250px);
+    letter-spacing: 6px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--color-gold);
+
+    text-shadow:
+        0 0 10px var(--color-gold-glow),
+        0 0 15px rgba(255,215,0,0.5);
+}
+
+/* =========================
+   TITULOS DE SECCION
+========================= */
+h2 {
+    font-size: 42px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    letter-spacing: 4px;
+    color: var(--color-gold);
+    text-align: center;
+
+    text-shadow:
+        0 0 8px var(--color-gold-glow),
+        0 0 18px rgba(255,215,0,0.3);
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, gold, transparent);
+    margin: 10px auto;
+}
+
+h3 {
+    font-size: 26px;
+    margin: 40px auto 20px;
+    letter-spacing: 3px;
+    color: var(--color-gold);
+
+    background: rgba(255,215,0,0.05);
+
+    display: inline-block;
+
+    padding: 8px 20px;
+
+    border-radius: 20px;
+
+    border: 1px solid var(--color-gold-soft);
+}
+
+/* =========================
+   TEXTO MEJORADO
+========================= */
+p {
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+/* =========================
+   NAVBAR PROFESIONAL
+========================= */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 15px;
+
+    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.5);
+}
+
+nav ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+
+    padding: 10px 20px;
+
+    border-radius: 25px;
+
+    font-size: 18px;
+}
+
+nav a:hover {
+    background: gold;
+    color: black;
+    box-shadow: 0 0 15px gold;
+    transform: scale(1.1);
+}
+
+/* =========================
+   GALERIA PORTAFOLIO
+========================= */
+.galeria-portafolio {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 25px;
+
+    padding: 40px;
+}
+
+.item-portafolio img {
+
+    width: 100%;
+
+    border-radius: 12px;
+}
+
+.item-portafolio img:hover {
+
+    transform: scale(1.05);
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,0.8),
+        0 0 25px gold;
+}
+
+/* =========================
+   SERVICIOS PREMIUM
+========================= */
+.seccion-servicios {
+
+    margin: 60px auto;
+
+    text-align: center;
+}
+
+.contenedor-servicios {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 30px;
+}
+
+.servicio {
+
+    background: linear-gradient(
+        145deg,
+        rgba(0,0,0,0.85),
+        rgba(0,0,0,0.65)
+    );
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    border: 1px solid var(--color-gold-soft);
+
+    backdrop-filter: blur(6px);
+}
+
+.servicio:hover {
+
+    transform: translateY(-10px) scale(1.02);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.8),
+        0 0 25px gold;
+}
+
+.servicio img {
+
+    width: 100%;
+
+    height: 200px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+/* =========================
+   CONTACTO PREMIUM
+========================= */
+.seccion-contacto {
+
+    display: flex;
+
+    justify-content: center;
+
+    padding: 80px 20px;
+}
+
+.formulario {
+
+    background: var(--color-card);
+
+    padding: 40px;
+
+    width: 100%;
+
+    max-width: 520px;
+
+    border-radius: 18px;
+
+    border: 1px solid var(--color-gold-soft);
+
+    backdrop-filter: blur(6px);
+
+    box-shadow:
+        0 0 20px rgba(255,215,0,0.2),
+        0 0 60px rgba(255,215,0,0.08);
+}
+
+.formulario:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 0 30px rgba(255,215,0,0.35),
+        0 0 80px rgba(255,215,0,0.12);
+}
+
+.formulario input,
+.formulario textarea {
+
+    width: 100%;
+
+    padding: 14px;
+
+    margin-bottom: 15px;
+
+    border-radius: 10px;
+
+    border: 1px solid var(--color-gold-soft);
+
+    background: var(--color-card-light);
+
+    color: white;
+
+    font-size: 15px;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+
+    border-color: gold;
+
+    box-shadow: 0 0 10px gold;
+}
+
+/* BOTON */
+.formulario button {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border-radius: 30px;
+
+    border: none;
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    background: linear-gradient(45deg, gold, #FFD700);
+
+    color: black;
+}
+
+.formulario button:hover {
+
+    transform: scale(1.05);
+
+    box-shadow: 0 0 20px gold;
+}
+
+/* =========================
+   ANIMACIONES PROFESIONALES
+========================= */
+.servicio,
+.item-portafolio,
+.formulario {
+
+    animation: fadeUp 0.8s ease;
+}
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   IMAGENES CENTRADAS
+========================= */
+img {
+
+    display: block;
+
+    margin: auto;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+
+    body {
+        background-attachment: scroll;
+    }
+
+    nav ul {
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+}
