@@ -84,7 +84,7 @@ section,
 }
 
 /* =========================
-   TITULO PRINCIPAL (SIN MODIFICAR TIPOGRAFIA)
+   TITULO PRINCIPAL
 ========================= */
 h1 {
     font-family: 'ArchazNegras_PERSONAL_USE_ONLY', sans-serif;
@@ -100,7 +100,7 @@ h1 {
 }
 
 /* =========================
-   TITULOS DE SECCION
+   H2 PERFECTAMENTE CENTRADOS
 ========================= */
 h2 {
     font-size: 42px;
@@ -108,6 +108,13 @@ h2 {
     margin-bottom: 20px;
     letter-spacing: 4px;
     color: var(--color-gold);
+
+    display: block;
+    width: fit-content;
+
+    margin-left: auto;
+    margin-right: auto;
+
     text-align: center;
 
     text-shadow:
@@ -121,28 +128,38 @@ h2::after {
     width: 120px;
     height: 3px;
     background: linear-gradient(90deg, transparent, gold, transparent);
-    margin: 10px auto;
+    margin: 10px auto 0 auto;
 }
 
+/* =========================
+   H3 PERFECTAMENTE CENTRADOS
+========================= */
 h3 {
     font-size: 26px;
-    margin: 40px auto 20px;
+    margin-top: 40px;
+    margin-bottom: 20px;
     letter-spacing: 3px;
     color: var(--color-gold);
 
-    background: rgba(255,215,0,0.05);
+    display: block;
+    width: fit-content;
 
-    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
 
     padding: 8px 20px;
+
+    background: rgba(255,215,0,0.05);
 
     border-radius: 20px;
 
     border: 1px solid var(--color-gold-soft);
+
+    text-align: center;
 }
 
 /* =========================
-   TEXTO MEJORADO
+   TEXTO
 ========================= */
 p {
     max-width: 600px;
@@ -153,7 +170,7 @@ p {
 }
 
 /* =========================
-   NAVBAR PROFESIONAL
+   NAVBAR
 ========================= */
 nav {
     position: sticky;
@@ -178,11 +195,8 @@ nav ul {
 nav a {
     color: white;
     text-decoration: none;
-
     padding: 10px 20px;
-
     border-radius: 25px;
-
     font-size: 18px;
 }
 
@@ -194,55 +208,42 @@ nav a:hover {
 }
 
 /* =========================
-   GALERIA PORTAFOLIO
+   GALERIA
 ========================= */
 .galeria-portafolio {
     display: grid;
-
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
     gap: 25px;
-
     padding: 40px;
 }
 
 .item-portafolio img {
-
     width: 100%;
-
     border-radius: 12px;
 }
 
 .item-portafolio img:hover {
-
     transform: scale(1.05);
-
     box-shadow:
         0 10px 40px rgba(0,0,0,0.8),
         0 0 25px gold;
 }
 
 /* =========================
-   SERVICIOS PREMIUM
+   SERVICIOS
 ========================= */
 .seccion-servicios {
-
     margin: 60px auto;
-
     text-align: center;
 }
 
 .contenedor-servicios {
-
     display: grid;
-
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-
     gap: 30px;
 }
 
 .servicio {
-
     background: linear-gradient(
         145deg,
         rgba(0,0,0,0.85),
@@ -250,60 +251,43 @@ nav a:hover {
     );
 
     padding: 25px;
-
     border-radius: 15px;
-
     border: 1px solid var(--color-gold-soft);
-
     backdrop-filter: blur(6px);
 }
 
 .servicio:hover {
-
     transform: translateY(-10px) scale(1.02);
-
     box-shadow:
         0 15px 40px rgba(0,0,0,0.8),
         0 0 25px gold;
 }
 
 .servicio img {
-
     width: 100%;
-
     height: 200px;
-
     object-fit: cover;
-
     border-radius: 10px;
 }
 
 /* =========================
-   CONTACTO PREMIUM
+   CONTACTO (CORREGIDO)
 ========================= */
 .seccion-contacto {
-
     display: flex;
-
+    flex-direction: column; /* CLAVE */
+    align-items: center;    /* CLAVE */
     justify-content: center;
-
     padding: 80px 20px;
 }
 
 .formulario {
-
     background: var(--color-card);
-
     padding: 40px;
-
     width: 100%;
-
     max-width: 520px;
-
     border-radius: 18px;
-
     border: 1px solid var(--color-gold-soft);
-
     backdrop-filter: blur(6px);
 
     box-shadow:
@@ -312,9 +296,7 @@ nav a:hover {
 }
 
 .formulario:hover {
-
     transform: translateY(-5px);
-
     box-shadow:
         0 0 30px rgba(255,215,0,0.35),
         0 0 80px rgba(255,215,0,0.12);
@@ -322,78 +304,45 @@ nav a:hover {
 
 .formulario input,
 .formulario textarea {
-
     width: 100%;
-
     padding: 14px;
-
     margin-bottom: 15px;
-
     border-radius: 10px;
-
     border: 1px solid var(--color-gold-soft);
-
     background: var(--color-card-light);
-
     color: white;
-
-    font-size: 15px;
 }
 
-.formulario input:focus,
-.formulario textarea:focus {
-
-    border-color: gold;
-
-    box-shadow: 0 0 10px gold;
-}
-
-/* BOTON */
 .formulario button {
-
     width: 100%;
-
     padding: 14px;
-
     border-radius: 30px;
-
     border: none;
-
     font-weight: bold;
-
-    font-size: 16px;
-
     cursor: pointer;
-
     background: linear-gradient(45deg, gold, #FFD700);
-
     color: black;
 }
 
 .formulario button:hover {
-
     transform: scale(1.05);
-
     box-shadow: 0 0 20px gold;
 }
 
 /* =========================
-   ANIMACIONES PROFESIONALES
+   ANIMACIONES
 ========================= */
 .servicio,
 .item-portafolio,
 .formulario {
-
     animation: fadeUp 0.8s ease;
 }
 
 @keyframes fadeUp {
-
     from {
         opacity: 0;
         transform: translateY(30px);
     }
-
     to {
         opacity: 1;
         transform: translateY(0);
@@ -404,9 +353,7 @@ nav a:hover {
    IMAGENES CENTRADAS
 ========================= */
 img {
-
     display: block;
-
     margin: auto;
 }
 
@@ -420,9 +367,7 @@ img {
     }
 
     nav ul {
-
         flex-direction: column;
-
         gap: 15px;
     }
 
